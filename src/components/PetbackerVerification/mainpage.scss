@@ -1,0 +1,37 @@
+div {
+    .verify-id {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        p {
+            font-size: 30px;
+            font-weight: 900;
+            margin-right:20px ;
+        }
+        div {
+
+        }
+        h4 {
+            text-transform: uppercase;
+        }
+        small {
+            display: inline-block;
+            width: 60%;
+            span {
+                font-weight: 700;
+            }
+        }
+    }
+
+    .no1 {
+
+    }
+    .no2 {
+
+    }
+    .no3 {
+
+    }
+}

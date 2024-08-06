@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+// defining colors
+$black: #000;
+$primary: #beba9d;
+$secondary: #938838;
+$tertiary: #E4DC9B;
+$white: #fff;
+$light-gray: #d9d9d9;
+$red: #f14b4b;
+
+// fonts
+$itim-font: "Itim", sans-serif;
+$opensans-font: 'Open Sans', sans-serif;
+$playfair-font: 'Playfair Display', serif;
+
+// font size
+$big-font: 48px;
+$medium-font: 36px;
+$small-font: 24px;
+
+// defining breakpoints
+$mobile-screen: 580px;
+$small-screen: 670px;
+$medium-screen: 950px;
+$large-screen: 1236px;
+

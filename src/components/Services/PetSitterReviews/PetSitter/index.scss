@@ -1,0 +1,63 @@
+@import '../../../utilities/variables';
+
+.petsitter {
+    border: 1px solid $light-gray;
+    border-radius: 10px;
+    width: 30%;
+    height: 100%;
+
+    @media screen and  (max-width: $small-screen){
+        margin: 10px auto;
+        width: 70%;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    div {
+        display: flex;
+        justify-content: space-between;
+
+        padding: 20px;
+        @media screen and  (max-width: $medium-screen){
+            padding: 5px;
+        }
+        @media screen and  (max-width: $small-screen){
+            padding: 20px;
+        }
+    }
+
+    div.top-row {
+        display: flex;
+        margin: 0;
+        
+        h3{
+            font-family: $opensans-font;
+            font-size: 18px;
+            font-weight: 700;
+
+            @media screen and  (max-width: $medium-screen){
+                font-size: 12px;
+            }
+            @media screen and  (max-width: $small-screen){
+                font-size: 18px;
+            }
+        }
+    }
+    div.bottom-row {
+        p {
+            @media screen and  (max-width: $medium-screen){
+                font-size: 12px;
+            }
+            @media screen and  (max-width: $small-screen){
+                font-size: 18px;
+            }
+        }
+        .charge {
+            font-weight: 700;
+            color: red;
+
+        }
+    }
+}

@@ -1,0 +1,85 @@
+@import '../utilities/variables';
+
+.addphotos-parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+
+
+    h4 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+
+    }
+    p { 
+        font-size: 1rem;
+        margin-bottom: 1rem;
+
+    }
+    .photos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+
+        .photo {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            button.delete {
+                position: absolute;
+                top: 0;
+                right: 0;
+                background-color: $red;
+                color: white;
+                border: none;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                transition: all 0.3s;
+                &:hover {
+                    background-color: darken($red, 10%);
+                }
+            }
+        }
+
+    }
+
+    .add-photos {
+
+        input[type="file"] {
+            display: none;
+        }
+
+        label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            border: 2px dashed $primary;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            &:hover {
+                background-color: $primary;
+                color: white;
+            }
+        }
+    }
+}

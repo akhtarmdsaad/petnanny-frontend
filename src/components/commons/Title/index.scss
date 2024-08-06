@@ -1,0 +1,31 @@
+@import '../../utilities/variables';
+
+.title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: fit-content;
+    margin: 20px;
+
+
+    .text {
+        font-family: $playfair-font;
+        font-size: 48px;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 1rem;
+
+        @media screen and (max-width: $medium-screen){
+            font-size: $medium-font;
+        }
+    }
+
+    .underline {
+        width: calc(100% - 50px);
+        height: 20px;
+        border-radius: 100px;
+        background-color: #CFCBAE;
+    }
+
+}

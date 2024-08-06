@@ -1,0 +1,11 @@
+@import '../utilities/variables';
+
+.petbacker-verification {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    h1 {
+        color: $primary;
+        font-size: 30px;
+    }
+}

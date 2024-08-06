@@ -1,0 +1,65 @@
+@import '../utilities/variables';
+
+.petbacker-form {
+    padding: 10px;
+    h1 {
+        width: 100%;
+        color: $primary;
+    }
+    
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input {
+        border: 1px solid gray;
+        border-radius: 5px;
+        padding: 5px;
+        margin: 5px;
+        outline: none;
+        display: block;
+        width: 80%;
+    }
+
+    input[type='checkbox'],input[type='radio'] {
+        display: inline-block;
+        width: auto;
+    }
+    input:focus{
+        border: 2px solid $primary;
+    }
+    textarea {
+        border: 1px solid gray;
+        border-radius: 5px;
+        padding: 5px;
+        margin: 5px;
+        outline: none;
+        display: block;
+        width: 80%;
+    }
+    textarea:focus{
+        border: 2px solid $primary;
+    }
+
+    small {
+        color: gray;
+        display: block;
+        margin-top: 20px;
+    }
+
+    .form-buttons {
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: $primary;
+            color: white;
+            font-size: 1rem;
+        }
+    }
+}

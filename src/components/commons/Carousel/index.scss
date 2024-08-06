@@ -1,0 +1,41 @@
+@import '../../utilities/variables';
+
+
+// making scroll effect for products 
+
+.carousel-parent{
+    position: relative;
+    .carousel {
+        display: flex;
+        position: relative;
+        overflow: scroll;
+        width: 100%;
+        
+    }
+    .arrow {
+        position:absolute;
+        top:30%;
+        width: 50px;
+        height: 50px;
+        background-color: rgba(0, 0, 0, 0.2);
+        z-index: 20;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        scroll-behavior: smooth;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+        transition: 0.3s;
+    }
+
+    .left-arrow {
+        left: 0;
+    }
+    .right-arrow {
+        right: 0;
+    }
+
+}

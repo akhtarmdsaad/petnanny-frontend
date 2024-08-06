@@ -1,0 +1,40 @@
+@import '../../utilities/variables';
+
+.footer {
+    border: 1px solid $light-gray;
+    background-color: $white;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+
+    @media screen and (max-width: $small-screen) {
+        flex-direction: column;
+    }
+
+    padding: 20px 100px;
+    .sections {
+        display: flex;
+        flex-direction: column;
+        h4{
+            font-size: 24px;
+            font-family: $playfair-font;
+            font-weight: 600;
+            color: $black;
+        }
+        p{
+            font-size: 14px;
+            font-family: $opensans-font;
+            font-weight: 300;
+            color: $black;
+
+            a{
+                color: $black;
+                text-decoration: none;
+                &:hover{
+                    color: $primary;
+                }
+            }
+        }
+    }
+}

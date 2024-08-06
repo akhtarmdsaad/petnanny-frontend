@@ -1,0 +1,17 @@
+div.chat-top-parent {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    .chat-parent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 500px;
+        flex-direction: column;
+
+        border: 1px solid gray;
+        border-radius: 10px;
+        padding: 2px;
+    }
+}

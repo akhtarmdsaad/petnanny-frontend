@@ -1,0 +1,27 @@
+@import '../../utilities/variables';
+// <div className='button'>
+//         <a href='#' className='text'>{text}</a>
+//     </div>
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: 50px;
+    background-color: $primary;
+    border-radius: 100px;
+    margin-top: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: max(20px,3%);
+    padding-right: max(20px,3%);
+    
+    .text {
+        font-size: 18px;
+        font-family: $opensans-font;
+        font-weight: 600;
+        color: $white;
+        text-decoration: none;
+    }
+}

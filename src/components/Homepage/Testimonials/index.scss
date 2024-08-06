@@ -1,0 +1,22 @@
+@import '../../utilities/variables';
+
+.testimonials-parent {
+    .testimonials {
+        @media screen and (max-width: $small-screen) {
+            flex-direction: column;
+            padding: 0px 20px;
+        }
+
+        padding: 0px 100px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .button-parent {
+        // center
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+}

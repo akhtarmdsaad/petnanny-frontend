@@ -1,0 +1,55 @@
+@import '../../utilities/variables';
+
+$image-size: 100px;
+
+.testimonial-card {
+
+    max-width: 400px;
+    height: auto;
+    position: relative;
+    margin: 10px;
+    // background-color: red;
+    img {
+        position: relative;
+        // left: 50%;
+        // top: 0;
+        // clip-path: circle(50px at 50% 50%);
+        width: $image-size;
+        height: $image-size;
+        border-radius: 100px;
+        z-index: 20;
+    }
+
+    .details {
+        position: relative;
+        border: 1px solid $secondary;
+        border-radius: 10px;
+        padding: calc($image-size / 2 + 10px) 10px 10px 10px;
+        transform: translate(0, calc(-1 * $image-size / 2));
+
+        .description {
+            font-size: 14px;
+            font-family: $opensans-font;
+            font-weight: 300;
+            color: $black;
+            margin-top: 10px;
+        }
+        .name_date {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            .name {
+                font-size: 18px;
+                font-family: $playfair-font;
+                font-weight: 600;
+                color: $black;
+            }
+            .date {
+                font-size: 12px;
+                font-family: $opensans-font;
+                font-weight: 300;
+                color: $primary;
+            }
+        }
+    }
+}

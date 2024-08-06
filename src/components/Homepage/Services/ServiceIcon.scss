@@ -1,0 +1,23 @@
+@import '../../utilities/variables';
+
+
+.service-icon {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img{
+        width: auto;
+        height: 125px;
+
+        @media screen and (max-width: $small-screen){
+            height: 75px;
+        }
+    }
+
+    p{
+        color: $primary;
+    }
+}

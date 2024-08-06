@@ -1,0 +1,87 @@
+@import '../../utilities/variables';
+
+.services-hero {
+    background: url('~/public/assets/images/hero2.jpg') center center/cover no-repeat;
+    padding: 200px 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .form-container{
+        background-color: rgba(#6f6f6f, 0.4);
+        padding: 50px;
+        border-radius: 10px;
+        position: relative;
+        display: flex;
+        align-items: left;
+        justify-content: space-around;
+        width: 80%;
+
+        @media screen and (max-width: $small-screen) {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        div {
+            // display: flex;
+            // align-items: center;
+            // flex-direction: column;
+            // // width: 100%;
+            // no space between the elements
+            margin: 10px;
+            // height: 200px;
+            margin: 0;
+            justify-content:flex-end;
+            align-items: end;
+
+                h3 {
+                font-family: $playfair-font;
+                color: $black;
+                font-size: 24px;
+                margin: 0;
+                text-align: start;
+                
+            }
+
+            input {
+                padding: 10px;
+                margin: 10px 0;
+                border: none;
+                border-radius: 5px;
+                background-color: $white;
+                color: $black;
+                width: 100%;
+            }
+
+            select {
+                padding: 10px;
+                margin: 10px 0;
+                border: none;
+                border-radius: 5px;
+                background-color: $white;
+                color: $black;
+                width: 100%;
+            }
+        }
+
+        
+
+        
+    }
+    button {
+        position: relative;
+        top: -20px;
+        // left: 45%;
+
+        color: $white;
+        background-color: $primary;
+        padding: 20px 40px;
+        font-size: 15px;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+}

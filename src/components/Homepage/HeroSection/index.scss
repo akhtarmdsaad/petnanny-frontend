@@ -1,0 +1,47 @@
+@import '../../utilities/variables';
+
+.homepage-hero {
+    background: url('~/public/assets/images/hero.jpg') center center/cover no-repeat;
+    padding: 200px 100px;
+    .hero-text {
+        // background: #938838;
+        width: 50%;
+        color: $white;
+
+        @media screen and (max-width: $medium-screen){
+            width: 100%;
+        }
+
+        h1 {
+            font-family: $playfair-font;
+            font-size: $big-font;
+
+            @media screen and (max-width: $medium-screen){
+                font-size: $medium-font;
+            }
+        }
+        p{
+            font-family: $opensans-font;
+            display: none;
+        }
+        button {
+            // width: 150px;
+            padding: 10px;
+            background: none;
+            margin-right: 10px;
+            margin-top: 20px;
+            outline: none;
+            border: 3px solid $white;
+            font-weight: 600;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .button1{
+            color: $black;
+            background: $white;
+        }
+        .button2{
+            color: $white;
+        }
+    }
+}
