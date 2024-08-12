@@ -1,20 +1,23 @@
 import React from 'react'
 
-const AddServiceRate = () => {
+const AddServiceRate = ({formData, setFormData}) => {
+    const handleTextInputChange = (e)=>{
+        setFormData({...formData, [e.target.name]:e.target.value});
+    }
   return (
     <div>
         <h4>Add Service Rate</h4>
         <p>Service Type</p>
-        <select>
-            <option value="1">Dog Walking</option>
-            <option value="2">Pet Boarding</option>
-            <option value="3">Dog Training</option>
+        <select onChange={handleTextInputChange} name='Service Type'>
+            <option value="Dog Walking">Dog Walking</option>
+            <option value="Pet Boarding">Pet Boarding</option>
+            <option value="Dog Training">Dog Training</option>
         </select>
         <p>Price</p>
-        <input type="number" />
+        <input type="number" name='price of service' onChange={handleTextInputChange} />
         <small>Pet owners will feel more comfortable knowing what is included in this quote</small>
         
-        <textarea placeholder="Description" />
+        <textarea placeholder="Description" name='additional description of service' onChange={handleTextInputChange} />
     </div>
   )
 }

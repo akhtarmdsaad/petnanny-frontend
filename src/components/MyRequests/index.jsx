@@ -14,8 +14,8 @@ const MyRequests = () => {
   useEffect(()=>{
     let url = "requests/";
     axios.get(url).then(response => {
-      console.log(response.data.requests)
-      setData(response.data.requests);
+      console.log(response.data)
+      setData(response.data)
     }).catch(error=>{
       console.error(error)
     })
@@ -26,12 +26,22 @@ const MyRequests = () => {
         <Navbar />
         <div style={{display: 'flex', alignItems:'center',justifyContent:'space-between', padding:20}}>
             <Title name="My Requests" />
-            <Button text="Make Request" />
+            {/* tgis button moves to '/request-form' */}
+            <Button text="Make Request" onClick={
+              () => {
+                window.location.href = '/request-form';
+              }
+            } />
         </div>
         <div className="myRequests">
-          {data.map((item, index) => {
-            return <Request key={index} service={item.service} status={item.status} location={item.location} duration={item.duration} item_id={item.id} />
-          })}
+          {/* handle data object */}
+          {/* {data && (data).map((key,idx) => (
+            <div>{data}</div>
+          ))} */}
+          {/* {typeof(data) == object} */}
+          {data && data.map((request,idx) => (
+            <Request key={idx} request={request} />
+          ))}
         </div>
         <Footer />
     </div>

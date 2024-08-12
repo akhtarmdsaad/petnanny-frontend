@@ -1,14 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./index.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {faSearch, faShoppingCart, faUser, faBars} from '@fortawesome/free-solid-svg-icons';
+import axiosInstance from '../../../interceptors/axios';
 
 library.add(faSearch, faShoppingCart, faUser, faBars);
 
 
-const index = () => {
+const Index = () => {
     let userLogin=false;
+    const [isBacker, setIsBacker] = useState(false);
+    useEffect(()=>{
+        axiosInstance.get('is-backer/')
+        .then(response => {
+            console.log(response.data);
+            setIsBacker(response.data.is_backer);
+        })
+        .catch(error => {
+            console.log(error);
+            setIsBacker(false);
+        });
+    },[]);
     if(localStorage.getItem('token'))
         userLogin = true;
 
@@ -66,7 +79,10 @@ const index = () => {
             userLogin ?
             <div className="icons">
                 <FontAwesomeIcon icon="shopping-cart" />
-                <FontAwesomeIcon icon="user" />
+                {isBacker ? <FontAwesomeIcon icon="user" onClick={()=>{
+                    window.location.href = '/profile';
+                }} /> : null}
+
             </div>
             :
             <div className="icons">
@@ -79,4 +95,4 @@ const index = () => {
   )
 }
 
-export default index;
+export default Index;

@@ -1,10 +1,17 @@
-div {
+.mainpage-parent {
     .verify-id {
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         padding: 10px;
+        color: black;
+        text-decoration: none;
+
+        &:hover {
+            background-color: #f5f5f5;
+        }
+
         p {
             font-size: 30px;
             font-weight: 900;

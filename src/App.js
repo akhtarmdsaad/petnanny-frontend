@@ -13,6 +13,9 @@ import Mainpage from './components/PetbackerVerification/Mainpage';
 import IDverify from './components/PetbackerVerification/IDverify';
 import Questions from './components/PetbackerVerification/Questions';
 import PetbackerForm from './components/PetbackerForm';
+import RequestForm from './components/RequestForm';
+import RequestDetailView from './components/RequestDetailView';
+import Profile from './components/Profile';
 
 function App() {
   return (
@@ -22,12 +25,15 @@ function App() {
           <Route index element={<Home />} />
           <Route path="signin" element={<SignIn />} />
           <Route path="signup" element={<SignUp />} />
+          <Route path="profile" element={<Profile />} />
           <Route path="services" element={<Services />} />
           <Route path="requests" element={<Requests />} />
+          <Route path='requests/:id' element={<RequestDetailView />} />
           <Route path="petbacker-form" element={<PetbackerForm />} />
           <Route path="petbacker-verification" element={<Mainpage />} />
           <Route path="petbacker-verification/idverify" element={<IDverify />} />
           <Route path="petbacker-verification/petbacker-test" element={<Questions />} />
+          <Route path='request-form' element={<RequestForm />} />
       </Routes>
     </BrowserRouter>
   );

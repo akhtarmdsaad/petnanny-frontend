@@ -1,13 +1,16 @@
 import React from 'react'
 
-const ServiceName = () => {
+const ServiceName = ({formData, setFormData}) => {
+    const handleTextInputChange = (e)=>{
+        setFormData({...formData, [e.target.name]:e.target.value});
+    }
   return (
     <div>
         <h4>Give a name to your Service</h4>
         <form>
             <div className="form-group">
                 <label >Service Name</label>
-                <input type="text" className="form-control"  placeholder="e.g. Dog Walking" />
+                <input type="text" className="form-control" onChange={handleTextInputChange} name="Service Name"  placeholder="e.g. Dog Walking" />
             </div>
         </form>
     </div>

@@ -3,7 +3,7 @@ import './mainpage.scss';
 
 const Mainpage = () => {
   return (
-    <div>
+    <div className="mainpage-parent">
         {/* 3 verifications
             1. ID verifications
             2. Testimonials 
@@ -19,17 +19,17 @@ const Mainpage = () => {
         <a className='verify-id no2' href='petbacker-verification/petbacker-test'>
             <p>2</p>
             <div>
-            <h4>ID Verification</h4>
-            <small>Send us a photocopy of your government issued ID. Passport or Driving License with ID Number <span>Censored</span>. Then, send us a selfie of you with your ID Card together for verification</small>
+            <h4>Pet Sitter Intro Test</h4>
+            <small>Get a quick crash course on what petnanny is, how to avoid potential pitfalls and how to maximise your chances of getting more jobs. Complete the test and earn yourself a badge for your listing.</small>
             </div>
         </a>
-        <a className='verify-id no3'>
+        {/* <a className='verify-id no3'>
             <p>3</p>
             <div>
             <h4>ID Verification</h4>
             <small>Send us a photocopy of your government issued ID. Passport or Driving License with ID Number <span>Censored</span>. Then, send us a selfie of you with your ID Card together for verification</small>
             </div>
-        </a>
+        </a> */}
     </div>
   )
 }

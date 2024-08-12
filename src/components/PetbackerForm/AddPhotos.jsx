@@ -8,7 +8,7 @@ import './addphotos.scss';
 library.add(faPlusCircle, faTrash);
 
 // component that shows photo 
-const UploadedPhotos = ({images, setImages}) => {
+export const UploadedPhotos = ({images, setImages}) => {
   const handlePhotoDelete = (event) => {
     console.log("delete photo", event.target.parentElement.getAttribute('aria-label'));
 
@@ -52,7 +52,7 @@ const UploadedPhotos = ({images, setImages}) => {
 
 
 
-const AddPhotos = () => {
+const AddPhotos = ({formData, setFormData}) => {
   const [images,setImages] = useState([]);
 
 
@@ -62,11 +62,7 @@ const AddPhotos = () => {
     axios.get(url)
     .then(response => {
       let image_urls = response.data.images;
-      // { id: 1, purpose: "HomePics", image: "/media/images/1653971382299.gif"}
-      
-      // save to images object
       setImages(image_urls);
-
     })
     .catch(error => {
       console.log(error);

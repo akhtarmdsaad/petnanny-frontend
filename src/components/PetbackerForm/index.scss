@@ -48,6 +48,22 @@
         margin-top: 20px;
     }
 
+    select {
+        border: 1px solid gray;
+        border-radius: 5px;
+        padding: 5px;
+        margin: 5px;
+        outline: none;
+        display: block;
+        width: 80%;
+        color: gray;
+        background-color: white;
+
+        option {
+            padding: 5px;
+        }
+    }
+
     .form-buttons {
         display: flex;
         justify-content: space-between;
