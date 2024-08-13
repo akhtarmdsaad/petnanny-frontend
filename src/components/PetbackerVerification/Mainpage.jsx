@@ -1,13 +1,19 @@
 import React from 'react';
 import './mainpage.scss';
+import Navbar from '../commons/Navbar';
+import Footer from '../commons/Footer';
+import Title from '../commons/Title';
 
 const Mainpage = () => {
   return (
+    <>
+    <Navbar />
     <div className="mainpage-parent">
         {/* 3 verifications
             1. ID verifications
             2. Testimonials 
             3. Pet backer intro test  */}
+        <Title name='Petbacker Verification' />
         
         <a className='verify-id no1' href='petbacker-verification/idverify/'>
             <p>1</p>
@@ -31,6 +37,12 @@ const Mainpage = () => {
             </div>
         </a> */}
     </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <Footer />
+    </>
   )
 }
 

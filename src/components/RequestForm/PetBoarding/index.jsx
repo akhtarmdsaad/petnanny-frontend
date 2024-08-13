@@ -15,7 +15,7 @@ import Summary from '../Summary';
 const Index = () => {
     const [index,setIndex] = useState(0);
     const [formData,setFormData] = useState({
-      service: 'Pet Boarding',
+      Service: 'Pet Boarding',
     });
     const forms = [
       <Page1 formData={formData} setFormData={setFormData} />, <Page2 formData={formData} setFormData={setFormData} />, 
@@ -31,7 +31,7 @@ const Index = () => {
         <div className="top-bar">
             <div className="steps">
               {forms.map((item,idx)=>{
-                <div className={`step ${index === idx ? 'active' : ''}`}>{idx+1}</div>
+                return <div className={`step ${index === idx ? 'active' : ''}`}>{idx+1}</div>
               })}
             </div>
         </div>

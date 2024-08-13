@@ -24,7 +24,7 @@ const Index = () => {
       // to return : 10-08-2024 03:01:52 pm (notice the preceding zeros too)
 
       // extract data from value
-
+      if (!value) return ''
       let date = value.split('T')[0]
       let time = value.split('T')[1].split('.')[0]
 

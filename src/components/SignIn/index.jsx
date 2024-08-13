@@ -7,6 +7,7 @@ import Footer from '../commons/Footer';
 
 const SignIn = () => {
   const [formData,setFormData] = useState({ username: '', password: '' });
+  const [status,setStatus] = useState('');
 
     function handleSubmit(event){
         event.preventDefault(); 
@@ -18,12 +19,14 @@ const SignIn = () => {
             },
             body: JSON.stringify(formData),
         })
-        .then(response => response.json())
+        .then(response=>(response.status === 200? response.json(): setStatus("Invalid Credentials")))
         .then(data => {
             console.log('Success:', data);
-            localStorage.setItem('token', data.access);
-            localStorage.setItem('refresh', data.refresh);
-            window.location.href = "/";
+            if(data){
+                localStorage.setItem('token', data.access);
+                localStorage.setItem('refresh', data.refresh);
+                window.location.href = "/";
+            }
         })
     }
   return (
@@ -32,6 +35,7 @@ const SignIn = () => {
     <div className='signin-parent'>
         <form className="signin" onSubmit={handleSubmit}>
             <h2>Sign In</h2>
+            <div className='status'>{status}</div>
             <div className="input">
                 <label>Username</label>
                 <input type="text" placeholder="Enter your username" onChange={(e)=>{

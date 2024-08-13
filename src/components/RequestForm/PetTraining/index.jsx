@@ -9,17 +9,22 @@ import Page3 from './Page3';
 import Page4 from './Page4';
 import Page5 from './Page5';
 import Page6 from './Page6';
+import Page7 from './Page7';
+import Page8 from './Page8';
+import Page9 from './Page9';
 import Summary from '../Summary';
 
 const Index = () => {
     const [index,setIndex] = useState(0);
     const [formData,setFormData] = useState({
-      service: 'Pet Training',
+      Service: 'Pet Training',
     });
     const forms = [
       <Page1 formData={formData} setFormData={setFormData} />, <Page2 formData={formData} setFormData={setFormData} />, 
       <Page3 formData={formData} setFormData={setFormData} />, <Page4 formData={formData} setFormData={setFormData} />, 
       <Page5 formData={formData} setFormData={setFormData} />, <Page6 formData={formData} setFormData={setFormData} />, 
+      <Page7 formData={formData} setFormData={setFormData} />, <Page8 formData={formData} setFormData={setFormData} />, 
+      <Page9 formData={formData} setFormData={setFormData} />,
       <Summary service="Pet Training" formData={formData} />
     ];
   return (
@@ -29,7 +34,7 @@ const Index = () => {
         <div className="top-bar">
             <div className="steps">
             {forms.map((item,idx)=>{
-                <div className={`step ${index === idx ? 'active' : ''}`}>{idx+1}</div>
+                return <div className={`step ${index === idx ? 'active' : ''}`}>{idx+1}</div>
               })}
             </div>
         </div>

@@ -57,11 +57,24 @@ const Card = ({title,description}) => {
       alert("Error uploading image");
     }
   };
+
+  const handleDelete = async () => {
+    try {
+      const response = await axios.delete(`/imageupload/${image.id}/`);
+      console.log(response);
+      setImage(null);
+    } catch (error) {
+      console.error(error);
+      alert("Error deleting image");
+    }
+  }
     return (
         <div className='card-parent'>
-            {image && image.description!==title ? (<><input type="file" id={title} accept="image/*" onChange={handleFileUpload} />
+            {!image? (<>
+            <input type="file" id={title} accept="image/*" onChange={handleFileUpload} />
             <label htmlFor={title}>
               <div className="card">
+                <div className="container">
                 <div className="icon">
                   <FontAwesomeIcon icon={faPlus} />
                 </div>
@@ -70,15 +83,24 @@ const Card = ({title,description}) => {
                   <h4>{title}</h4>
                   <small>{description}</small>
                 </div>
+                </div>
               </div>
             </label>
             </>)
             :(<div className="card">
-                <img src={`http://localhost:8000/${image.image}`} alt="Driving License" />
-                <div>
-                  {/* title and small text  */}
-                  <h4>{title}</h4>
-                  <small>Uploaded</small>
+                <div className='container'>
+                  <img src={`http://localhost:8000/${image.image}`} alt="Driving License" />
+                  <div>
+                    {/* title and small text  */}
+                    <h4>{title}</h4>
+                    <small>Uploaded</small>
+                  </div>
+                </div>
+                <div className="delete">
+                  <button onClick={(e)=>{
+                    e.preventDefault();
+                    handleDelete();
+                  }}>Delete</button>
                 </div>
             </div>)}
         </div>
@@ -86,11 +108,23 @@ const Card = ({title,description}) => {
 }
 
 const IDverify = () => {
+  const handleSubmit = () => {
+    // go back
+    window.history.back();
+  }
   return (
     <div className='id-verify-parent'>
         <div className='id-verify'>
             <h3>ID Verification</h3>
+            
+            <Card title="Identification Document" description="Required" />
+            <Card title="Selfie with ID" description="Required" />
+
             <Card title="Driving License" description="Required for Taxi Services" />
+            <Card title="Passport" description="If you don't have ID" />
+            <Card title="Police Clearance " description="If you don't have ID" />
+            <Card title="Payout ID" description="For verifying payout info" />
+            <button className="submit"onClick={handleSubmit}>Submit</button>
         </div>
     </div>
   )

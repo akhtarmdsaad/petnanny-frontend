@@ -11,9 +11,14 @@ const Page8 = ({formData, setFormData}) => {
     <div className='form'>
         <div className="question">Where do you need the service?</div>
         <div className="answer">
-        <div className="form-group">
-            <input type="text" name="location" onChange={handleChange} />
-            </div>
+          <div className="form-group">
+            <select onChange={handleChange}>
+              <option>Delhi</option>
+              <option>Noida</option>
+              <option>Bangalore</option>
+              <option>Gurgaon</option>
+            </select>
+          </div>
         </div>
     </div>
   )

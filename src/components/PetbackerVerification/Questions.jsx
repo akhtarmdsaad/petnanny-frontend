@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './questions.scss';
 
 const Questions = () => {
     const [no,setNo] = useState(1);
+    const [status,setStatus] = useState('');
     const [questions,setQuestions] = useState([
         {
             question: 'What Services does Petnanny provides?',
@@ -146,6 +147,21 @@ const Questions = () => {
         },
 
 ]);
+    
+    function uncheckRadioButtons() {
+        const radios = document.querySelectorAll("radio");
+        for (let i = 0; i < radios.length; i++) {
+            radios[i].checked = false;
+        }
+    }
+    uncheckRadioButtons();
+    function uncheckCheckboxes(){
+        const checkboxes = document.querySelectorAll("checkbox");
+        for (let i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = false;
+        }
+    }
+    uncheckCheckboxes();
 
   return (
     <div className='questions-parent'>
@@ -157,7 +173,8 @@ const Questions = () => {
                 {(questions[no-1].type === 'radio'?
                     questions[no-1].options.map((elem,idx)=>{
                         return (
-                        <div className='options'>
+                        <div className='options' key={idx}>
+                            {/* unset the radio buttons */}
                             <input type='radio' name={questions[no-1].question} /> 
                             <label>{elem}</label>
                         </div>
@@ -165,7 +182,7 @@ const Questions = () => {
                     }):
                     questions[no-1].options.map((elem,idx)=>{
                         return (
-                        <div className='options'>
+                        <div className='options' key={idx}>
                             <input type='checkbox' name={questions[no-1].question} /> 
                             <label>{elem}</label>
                         </div>
@@ -174,22 +191,28 @@ const Questions = () => {
                     
                 )}
             </div>
+            <div className="status">
+                <p>{status}</p>
+            </div>
             <div className='buttons'>
                 <button onClick={()=>setNo(no-1)} disabled={no===1}>Previous</button>
                 {/* submit and check answer  */}
                 <button onClick={()=>{
+                    uncheckRadioButtons();
+                    uncheckCheckboxes();
                     if(questions[no-1].type === 'radio'){
+                        setStatus('');
                         let selected = document.querySelector('input[name="'+questions[no-1].question+'"]:checked').nextSibling.innerHTML;
                         if(selected === questions[no-1].answer){
-                            alert('Correct Answer');
                             if(no < questions.length){
                                 setNo(no+1);
+                                uncheckRadioButtons();
                             }
                             else {
                                 console.log("Match Completed Bro")
                             }
                         }else{
-                            alert('Wrong Answer');
+                            setStatus('Wrong Answer');
                         }
                     }
                     else{
@@ -197,20 +220,21 @@ const Questions = () => {
                             return elem.nextSibling.innerHTML;
                         });
                         if(JSON.stringify(selected) === JSON.stringify(questions[no-1].answer)){
-                            alert('Correct Answer');
+                            setStatus('');
                             if(no < questions.length){
                                 setNo(no+1);
+                                uncheckCheckboxes();
                             }
                             else {
                                 console.log("Match Completed Bro")
                             }
                         }else{
-                            alert('Wrong Answer');
+                            setStatus('Wrong Answer');
                         }
                     }
                 } }>Submit</button>
 
-                <button onClick={()=>setNo(no+1)} disabled={no===questions.length}>Next</button>
+                {/* <button onClick={()=>setNo(no+1)} disabled={no===questions.length}>Next</button> */}
             </div>
         </div>
     </div>

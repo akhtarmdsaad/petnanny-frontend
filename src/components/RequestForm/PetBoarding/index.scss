@@ -63,6 +63,17 @@
                         padding: 1rem;
                         margin-bottom: 1px;
 
+                        select {
+                            padding: 10px;
+                            margin: 10px 0;
+                            border: none;
+                            border-radius: 5px;
+                            background-color: $white;
+                            color: $black;
+                            width: 100%;
+                            font-size: 1.2rem;
+                        }
+
                         input[type="radio"] {
                             margin-right: 0.5rem;
                         }

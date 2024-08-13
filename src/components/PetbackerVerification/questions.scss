@@ -1,0 +1,115 @@
+// <div className='questions-parent'>
+//         <div className="questions">
+//             <h3>Question {no}/{questions.length}</h3>
+//             <div>
+//                 <h5>{questions[no-1].question}</h5>
+
+//                 {(questions[no-1].type === 'radio'?
+//                     questions[no-1].options.map((elem,idx)=>{
+//                         return (
+//                         <div className='options'>
+//                             <input type='radio' name={questions[no-1].question} /> 
+//                             <label>{elem}</label>
+//                         </div>
+//                         )
+//                     }):
+//                     questions[no-1].options.map((elem,idx)=>{
+//                         return (
+//                         <div className='options'>
+//                             <input type='checkbox' name={questions[no-1].question} /> 
+//                             <label>{elem}</label>
+//                         </div>
+//                         )
+//                     })
+                    
+//                 )}
+//             </div>
+//             <div className='buttons'>
+//                 <button onClick={()=>setNo(no-1)} disabled={no===1}>Previous</button>
+//                 {/* submit and check answer  */}
+//                 <button onClick={()=>{
+//                     if(questions[no-1].type === 'radio'){
+//                         let selected = document.querySelector('input[name="'+questions[no-1].question+'"]:checked').nextSibling.innerHTML;
+//                         if(selected === questions[no-1].answer){
+//                             alert('Correct Answer');
+//                             if(no < questions.length){
+//                                 setNo(no+1);
+//                             }
+//                             else {
+//                                 console.log("Match Completed Bro")
+//                             }
+//                         }else{
+//                             alert('Wrong Answer');
+//                         }
+//                     }
+//                     else{
+//                         let selected = Array.from(document.querySelectorAll('input[name="'+questions[no-1].question+'"]:checked')).map((elem)=>{
+//                             return elem.nextSibling.innerHTML;
+//                         });
+//                         if(JSON.stringify(selected) === JSON.stringify(questions[no-1].answer)){
+//                             alert('Correct Answer');
+//                             if(no < questions.length){
+//                                 setNo(no+1);
+//                             }
+//                             else {
+//                                 console.log("Match Completed Bro")
+//                             }
+//                         }else{
+//                             alert('Wrong Answer');
+//                         }
+//                     }
+//                 } }>Submit</button>
+
+//                 <button onClick={()=>setNo(no+1)} disabled={no===questions.length}>Next</button>
+//             </div>
+//         </div>
+//     </div>
+
+@import '../utilities/variables';
+
+.questions-parent{
+    padding: 20px;
+    .questions {
+        .status {
+            color: red;
+        }
+        h3{
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: $primary;
+
+            
+
+        }
+        div{
+            h5{
+                font-size: 20px;
+                font-weight: 500;
+                margin-bottom: 20px;
+            }
+            .options {
+                input[type='radio'], input[type='checkbox'] {
+                    margin-right: 10px;
+                }
+                label {
+                    font-size: 16px;
+                }
+            }
+        }
+        
+        .buttons {
+            button {
+                background: $primary;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+                margin-top: 20px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
