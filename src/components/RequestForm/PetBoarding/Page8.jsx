@@ -13,6 +13,7 @@ const Page8 = ({formData, setFormData}) => {
         <div className="answer">
           <div className="form-group">
             <select onChange={handleChange}>
+            <option>Select Location</option>
               <option>Delhi</option>
               <option>Noida</option>
               <option>Bangalore</option>

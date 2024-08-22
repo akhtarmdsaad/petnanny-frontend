@@ -53,7 +53,7 @@ const Index = () => {
             <div className='profile-petbacker-body'>
                 
                     {info && info.details && info.details.map((detail, index) => (
-                    <div className='profile-petbacker-body-left'>
+                    <div className='profile-petbacker-body-left' key={index}>
                         <div className='profile-petbacker-body-left-header'>
                             <h2>{detail?.topic}</h2>
                         </div>

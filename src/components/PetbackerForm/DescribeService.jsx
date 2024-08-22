@@ -244,8 +244,14 @@ const DescribeService = ({formData, setFormData}) => {
                 <label>No
                 </label>
             </div>
-            <p>Preferred search location (Optional)</p>
-            <textarea className="form-control" name="Preferred Search location" onChange={handleTextInputChange}  placeholder="Enter a landmark, key location or area which you would like people who are searching for your services to find you in. This value can only be entered once e.g.: New Delhi" />
+            <p>Search location for Service (required)</p>
+            {/* <textarea className="form-control" name="Preferred Search location" onChange={handleTextInputChange}  placeholder="Enter a landmark, key location or area which you would like people who are searching for your services to find you in. This value can only be entered once e.g.: New Delhi" /> */}
+            <select name='Search location for Service' onChange={handleTextInputChange}>
+              <option>Delhi</option>
+              <option>Noida</option>
+              <option>Bangalore</option>
+              <option>Gurgaon</option>
+            </select>
         </form>
     </div>
   )

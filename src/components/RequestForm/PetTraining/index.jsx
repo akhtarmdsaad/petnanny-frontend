@@ -12,6 +12,8 @@ import Page6 from './Page6';
 import Page7 from './Page7';
 import Page8 from './Page8';
 import Page9 from './Page9';
+import Page10 from './Page10';
+import Page11 from './Page11';
 import Summary from '../Summary';
 
 const Index = () => {
@@ -24,7 +26,8 @@ const Index = () => {
       <Page3 formData={formData} setFormData={setFormData} />, <Page4 formData={formData} setFormData={setFormData} />, 
       <Page5 formData={formData} setFormData={setFormData} />, <Page6 formData={formData} setFormData={setFormData} />, 
       <Page7 formData={formData} setFormData={setFormData} />, <Page8 formData={formData} setFormData={setFormData} />, 
-      <Page9 formData={formData} setFormData={setFormData} />,
+      <Page9 formData={formData} setFormData={setFormData} />, <Page10 formData={formData} setFormData={setFormData} />,
+      <Page11 formData={formData} setFormData={setFormData} />,
       <Summary service="Pet Training" formData={formData} />
     ];
   return (

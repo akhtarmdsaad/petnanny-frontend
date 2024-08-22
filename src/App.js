@@ -16,10 +16,11 @@ import PetbackerForm from './components/PetbackerForm';
 import RequestForm from './components/RequestForm';
 import RequestDetailView from './components/RequestDetailView';
 import Profile from './components/Profile';
+import Jobs from './components/Jobs';
+import RequestDetailViewBacker from './components/RequestDetailViewBacker';
 
 function App() {
   return (
-    // <PetbackerVerification />
     <BrowserRouter>
       <Routes>
           <Route index element={<Home />} />
@@ -28,6 +29,8 @@ function App() {
           <Route path="profile" element={<Profile />} />
           <Route path="services" element={<Services />} />
           <Route path="requests" element={<Requests />} />
+          <Route path='jobs' element={<Jobs />} />
+          <Route path='request-detail-to-backer/:id' element={<RequestDetailViewBacker />} />
           <Route path='requests/:id' element={<RequestDetailView />} />
           <Route path="petbacker-form" element={<PetbackerForm />} />
           <Route path="petbacker-verification" element={<Mainpage />} />

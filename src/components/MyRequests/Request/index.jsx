@@ -1,34 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import './index.scss'
 
-import ButtonFade from '../../commons/ButtonFade'
+// import ButtonFade from '../../commons/ButtonFade';
 import axios from '../../../interceptors/axios';
-let location, duration, service, item_id, status;
+// let location, duration, service, item_id, status;
+let service;
 
 const Request = ({key,request}) => {
-  // request object: created_at: "2024-08-10T14:41:22.079692Z"
-  // ​​
-  // data: Object { saad: "me" }
-  // ​​
-  // id: 1
-  // ​​
-  // service: "Pet Service"
-  // ​​
-  // updated_at: "2024-08-10T14:41:22.079719Z"
-  // ​​
-  // user: 1
   const [serviceName, setServiceName] = useState(service);
-  const data = {
-
-  }
   let item_id;
-  if (item_id === undefined){
-    item_id = request.id;
-    location = request.data.location;
-    duration = request.data.duration;
-    service = request.service;
-    status = request.status;
-  }
 
   function delete_item(){
     axios.delete(`requests/${item_id}`).then(response => {
@@ -44,14 +24,42 @@ const Request = ({key,request}) => {
 
   useEffect(()=>{
     console.log(request)
-    setServiceName(request.service || "Service Name")
-  },[])
+    let service;
+    // get service name from request
+      /*Object { id: 10, , data: (9) […], created_at: "2024-08-14T16:00:26.608719Z", updated_at: "2024-08-14T16:00:26.608789Z", user: 5 }
+  ​
+  created_at: "2024-08-14T16:00:26.608719Z"
+  ​
+  data: Array(9) [ {…}, {…}, {…}, … ]
+  // 0: Object { question: "Service", answer: "Dog Walking" }
+  ​
+  id: 10
+  ​
+  
+  ​
+  updated_at: "2024-08-14T16:00:26.608789Z"
+  ​
+  user: 5
+  ​
+  <prototype>: Object { … }
+  index.jsx:44
+*/
+
+    request.data.map((item)=>{
+      if (item.question === "Service"){
+        service = item.answer;
+        setServiceName(service);
+      }
+    }
+    )
+
+  },[request])
 
   return (
     <div className='request-parent'>
         <div className="request">
             <div className="top">
-              <h2>{serviceName}, {item_id}</h2>
+              <h2>{serviceName}</h2>
               <p className='status'>Created at: {request.created_at}</p>
               {/* <p className='status'>{status}</p>
               <p className="description">At {location}, for {duration} {duration===1?"day":"days"}</p>
