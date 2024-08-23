@@ -3,9 +3,23 @@ import React from 'react'
 const Page4 = ({formData, setFormData}) => {
   // format 1-5kg, 40+kg (include all checkboxes selected)
 
+  // const handleChange = (e) => {
+  //   let value = e.target.value;
+  //   let petType = formData.pet_type?formData.pet_type.split(", "):[];
+  //   if (petType.includes(value)) {
+  //     petType = petType.filter(type => type !== value);
+  //   } else {
+  //     petType.push(value);
+  //   }
+  //   console.log(petType);
+  //   setFormData({
+  //     ...formData,
+  //     pet_type: petType.join(", ")
+  //   });
+  // }
   const handleChange = (e) => {
     let value = e.target.value;
-    let size = formData["What is the size of your pet?"] ? formData["What is the size of your pet?"] : [];
+    let size = formData.pet_size?formData.pet_size.split(", "):[];
     if (size.includes(value)) {
       size = size.filter(type => type !== value);
     } else {

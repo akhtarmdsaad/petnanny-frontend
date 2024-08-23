@@ -1,15 +1,5 @@
 import React from 'react'
 
-        // num_pets: 1,
-        // pet_type: '',
-        // pet_breed: '',
-        // pet_size: '',
-        // additional_notes: '',
-        // start_date: new Date(),
-        // num_nights: 1,
-        // location: '',
-        // pickup_required: false
-
 const Page5 = ({formData, setFormData}) => {
   const handleChange = (e) => {
     setFormData({

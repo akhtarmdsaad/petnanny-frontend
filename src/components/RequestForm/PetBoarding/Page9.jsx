@@ -11,7 +11,6 @@ const Page9 = ({formData, setFormData}) => {
     <div className='form'>
         <div className="question">Do you need pet pickup services?</div>
         <div className="answer">
-
             <div className="form-group"><input type="radio" name="pickup" value="yes" onChange={handleChange} /> 
             <label>Yes</label></div>
             <div className="form-group"><input type="radio" name="pickup" value="no" onChange={handleChange} /> 

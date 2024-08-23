@@ -7,7 +7,7 @@ const Page2 = ({formData, setFormData}) => {
 
   const handleChange = (e) => {
     let value = e.target.value;
-    let petType = formData["What type of pet it is?"] || [];
+    let petType = formData.pet_type?formData.pet_type.split(", "):[];
     if (petType.includes(value)) {
       petType = petType.filter(type => type !== value);
     } else {

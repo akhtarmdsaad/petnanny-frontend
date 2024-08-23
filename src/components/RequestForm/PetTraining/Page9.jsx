@@ -7,7 +7,7 @@ const Page9 = ({formData, setFormData}) => {
 
   const handleChange = (e) => {
     let value = e.target.value;
-    let petType = formData["Pick the sessions you are available for"] || [];
+    let petType = formData.available_sessions?formData.available_sessions.split(", "):[];
     if (petType.includes(value)) {
       petType = petType.filter(type => type !== value);
     } else {

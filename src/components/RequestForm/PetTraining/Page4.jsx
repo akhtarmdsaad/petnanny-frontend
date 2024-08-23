@@ -5,7 +5,7 @@ const Page4 = ({formData, setFormData}) => {
 
   const handleChange = (e) => {
     let value = e.target.value;
-    let size = formData["What is the size of your pet?"] || [];
+    let size = formData.pet_size?formData.pet_size.split(", "):[];
     if (size.includes(value)) {
       size = size.filter(type => type !== value);
     } else {
