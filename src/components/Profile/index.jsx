@@ -32,6 +32,8 @@ const Index = () => {
         });
     }
     , []);
+
+    
   return (
     <>
     <Navbar />
@@ -51,25 +53,123 @@ const Index = () => {
             </div>
             )}
             <div className='profile-petbacker-body'>
-                
-                    {info && info.details && info.details.map((detail, index) => (
-                    <div className='profile-petbacker-body-left' key={index}>
+                <div className='profile-petbacker-body-left'>
                         <div className='profile-petbacker-body-left-header'>
-                            <h2>{detail?.topic}</h2>
+                            <h2>About Me</h2>
                         </div>
                         <div className='profile-petbacker-body-left-body'>
-                            {Array.isArray(detail?.value) ?
-                            detail?.value.map((value, index) => (
-                                <div key={index}>
-                                    <p>{value}</p>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                
+                                <p>{info && info.about_me}</p>
+                            </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Additional Description</h3>
+                                <p>{info && info.additional_description}</p>
+                            </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Adult Supervision</h3>
+                                <p>{info && info.adult_supervision}</p>
+                            </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Apartment House Number</h3>
+                                <p>{info && info.apartment_house_number}</p>
+                            </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>City</h3>
+                                <p>{info && info.city}</p>
+                            </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Country</h3>
+                                <p>{info && info.country}</p>
+                            </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Home Type</h3>
+                                <p>{info && info.home_type}</p>
+                            </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Last Minute Bookings</h3>
+                                <p>{info && info.last_minute_bookings? "Yes":"No" }</p>
+                            </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Listing Summary</h3>
+                                <p>{info && info.listing_summary}</p>
+                            </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Max Pets</h3>
+                                <p>{info && info.max_pets}</p>
+                            </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Nighttime Location</h3>
+                                <p>{info && info.nighttime_location}</p>
+                            </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Other Skills</h3>
+                                <p>{info && info.other_skills}</p>
+                            </div> 
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Outdoor Area Size</h3>
+                                <p>{info && info.outdoor_area_size}</p>
+                            </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Pet Experience</h3>
+                                <p>{info && info.pet_experience}</p>
+                            </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Pet Size</h3>
+                                <p>{info && info.pet_size}</p>
+                            </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Pets Accepted</h3>
+                                <p>{info && info.pets_accepted}</p>
+                            </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Potty Breaks</h3>
+                                <p>{info && info.potty_breaks}</p>
+                            </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Preferred Location</h3>
+                                <p>{info && info.preferred_location}</p>
+                            </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Price</h3>
+                                <p>{info && info.price}</p>
                                 </div>
-                            ))
-                            :
-                            <p>{detail?.value}</p>
-                            }
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Service Name</h3>
+                                <p>{info && info.service_name}</p>
+                                </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Service Type</h3>
+                                <p>{info && info.service_type}</p>
+                                </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Skills</h3>
+                                <p>{info && info.skills}</p>
+                                </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>State</h3>
+                                <p>{info && info.state}</p>
+                                </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Street Name</h3>
+                                <p>{info && info.street_name}</p>
+                                </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Transport Emergencies</h3>
+                                <p>{info && info.transport_emergencies? "Yes":"No"}</p>
+                                </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Unsupervised Location</h3>
+                                <p>{info && info.unsupervised_location}</p>
+                                </div>
+                            <div className='profile-petbacker-body-left-body-item'>
+                                <h3>Zip Code</h3>
+                                <p>{info && info.zip_code}</p>
+                                </div>
+
+
                         </div>
                     </div>
-                    ))}
 
                     {/* show photos  */}
                     <div className='profile-petbacker-body-right'>

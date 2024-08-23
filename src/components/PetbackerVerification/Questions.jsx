@@ -209,7 +209,7 @@ const Questions = () => {
                                 uncheckRadioButtons();
                             }
                             else {
-                                console.log("Match Completed Bro")
+                                window.location.href = '/profile';
                             }
                         }else{
                             setStatus('Wrong Answer');

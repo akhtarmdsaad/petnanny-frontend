@@ -10,7 +10,7 @@ const ServiceName = ({formData, setFormData}) => {
         <form>
             <div className="form-group">
                 <label >Service Name</label>
-                <input type="text" className="form-control" onChange={handleTextInputChange} name="Service Name"  placeholder="e.g. Dog Walking" />
+                <input type="text" className="form-control" onChange={handleTextInputChange} name="service_name"  placeholder="e.g. Dog Walking" />
             </div>
         </form>
     </div>

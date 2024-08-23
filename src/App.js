@@ -34,6 +34,9 @@ function App() {
           <Route path="requests" element={<Requests />} />
           <Route path='jobs' element={<Jobs />} />
           <Route path='request-detail-to-backer/:id' element={<RequestDetailViewBacker />} />
+          <Route path='request-detail-to-backer/petboarding/:id' element={<PetBoardingRequestDetailView />} />
+          <Route path='request-detail-to-backer/pettraining/:id' element={<PetTrainingRequestDetailView />} />
+          <Route path='request-detail-to-backer/dogwalking/:id' element={<DogWalkingRequestDetailView />} />
           <Route path='requests/:id' element={<RequestDetailView />} />
           <Route path="requests/petboarding/:id" element={<PetBoardingRequestDetailView />} />
           <Route path="requests/pettraining/:id" element={<PetTrainingRequestDetailView />} />
