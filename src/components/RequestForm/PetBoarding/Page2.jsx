@@ -1,5 +1,17 @@
 import React from 'react'
 
+// class PetBoardingRequest(models.Model):
+//     service = models.CharField(max_length=50, default='Pet Boarding')
+//     num_pets = models.PositiveIntegerField()
+//     pet_type = models.TextField()
+//     pet_breed = models.CharField(max_length=50, blank=True, null=True)
+//     pet_size = models.TextField()
+//     additional_notes = models.TextField(blank=True, null=True)
+//     start_date = models.DateTimeField()
+//     num_nights = models.PositiveIntegerField()
+//     location = models.CharField(max_length=100)
+//     pickup_required = models.BooleanField(default=False)
+
 const Page2 = ({formData, setFormData}) => {
 
   // format: 
@@ -14,7 +26,10 @@ const Page2 = ({formData, setFormData}) => {
       petType.push(value);
     }
     console.log(petType);
-    setFormData({...formData, "What type of pet it is?":petType});
+    setFormData({
+      ...formData,
+      pet_type: petType.join(", ")
+    });
   }
   return (
     <div className='form'>

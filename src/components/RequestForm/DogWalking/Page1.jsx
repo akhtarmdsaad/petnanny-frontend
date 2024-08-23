@@ -1,10 +1,20 @@
-import React from 'react'
+import React from 'react';
+
+// service: 'Dog Walking',
+//         num_dogs: 0,
+//         dog_breed: '',
+//         dog_size: '',
+//         additional_notes: '',
+//         walks_per_day: 0,
+//         num_days: 0,
+//         start_date: '',
+//         location: ''
 
 const Page3 = ({formData, setFormData}) => {
     const handleRadioChange = (e) => {
         setFormData({
         ...formData,
-        "How many dogs do you need walked?": e.target.value
+        num_dogs: parseInt(e.target.value)
         })
     }
   return (

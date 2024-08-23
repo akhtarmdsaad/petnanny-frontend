@@ -18,6 +18,9 @@ import RequestDetailView from './components/RequestDetailView';
 import Profile from './components/Profile';
 import Jobs from './components/Jobs';
 import RequestDetailViewBacker from './components/RequestDetailViewBacker';
+import PetBoardingRequestDetailView from './components/PetBoardingRequestDetailView';
+import PetTrainingRequestDetailView from './components/PetTrainingRequestDetailView';
+import DogWalkingRequestDetailView from './components/DogWalkingRequestDetailView';
 
 function App() {
   return (
@@ -32,6 +35,9 @@ function App() {
           <Route path='jobs' element={<Jobs />} />
           <Route path='request-detail-to-backer/:id' element={<RequestDetailViewBacker />} />
           <Route path='requests/:id' element={<RequestDetailView />} />
+          <Route path="requests/petboarding/:id" element={<PetBoardingRequestDetailView />} />
+          <Route path="requests/pettraining/:id" element={<PetTrainingRequestDetailView />} />
+          <Route path="requests/dogwalking/:id" element={<DogWalkingRequestDetailView />} />
           <Route path="petbacker-form" element={<PetbackerForm />} />
           <Route path="petbacker-verification" element={<Mainpage />} />
           <Route path="petbacker-verification/idverify" element={<IDverify />} />

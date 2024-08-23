@@ -13,7 +13,9 @@ const Page6 = ({formData, setFormData}) => {
     } else {
       petType.push(value);
     }
-    setFormData({...formData, "Which pet course are you interested in?":petType});
+    setFormData({...formData, 
+      course: petType.join(", ")
+    });
   }
   return (
     <div className='form'>

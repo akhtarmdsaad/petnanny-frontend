@@ -4,7 +4,7 @@ const Page1 = ({formData, setFormData}) => {
   const handleRadioChange = (e) => {
     setFormData({
       ...formData,
-      "How many pets do you need to board?": e.target.value
+      walks_per_day: parseInt(e.target.value)
     })
   }
   return (

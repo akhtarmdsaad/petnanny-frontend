@@ -9,7 +9,7 @@ import axios from '../../interceptors/axios';
 
 
 const MyRequests = () => {
-  const [data,setData] = useState([]);
+  const [data,setData] = useState({});
   const [isBacker, setIsBacker] = useState(false);
   console.log("render")
   useEffect(()=>{
@@ -50,10 +50,27 @@ const MyRequests = () => {
             <div>{data}</div>
           ))} */}
           {/* {typeof(data) == object} */}
-          {data && data.map((request,idx) => (
-            <Request key={idx} request={request} />
-          ))}
-          
+          {
+            Object.keys(data).length > 0 ? 
+            data.dogwalking_requests.map((request, idx) => {
+              return <Request key={idx} request={request} url={'dogwalking'}  />
+            }) : <div>No requests</div>
+          }
+
+          {
+            Object.keys(data).length > 0 ? 
+            data.petboarding_requests.map((request, idx) => {
+              return <Request key={idx} request={request} url={'petboarding'} />
+            }) : <div>No requests</div>
+          }
+
+          {
+            Object.keys(data).length > 0 ? 
+            data.pettraining_requests.map((request, idx) => {
+              return <Request key={idx} request={request} url={'pettraining'} />
+            }
+          ) : <div>No requests</div>
+          }
         </div>
         <div className="container">
           {!isBacker? <Button text="Become a Petbacker" onClick={

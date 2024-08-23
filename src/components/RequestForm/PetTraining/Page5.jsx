@@ -11,7 +11,9 @@ const Page5 = ({formData, setFormData}) => {
     } else {
       size.push(value);
     }
-    setFormData({...formData, "How old are your pets?":size});
+    setFormData({...formData, 
+      pet_age: size.join(", ")  
+    });
   }
 
   return (

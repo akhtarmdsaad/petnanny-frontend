@@ -13,7 +13,9 @@ const Page2 = ({formData, setFormData}) => {
     } else {
       petType.push(value);
     }
-    setFormData({...formData, "What type of pet it is?":petType});
+    setFormData({...formData, 
+      pet_type: petType.join(", ")
+    });
   }
   return (
     <div className='form'>

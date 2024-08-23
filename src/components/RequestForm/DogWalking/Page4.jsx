@@ -4,7 +4,7 @@ const Page5 = ({formData, setFormData}) => {
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      "Anything else the dog walker needs to know?": e.target.value
+      additional_notes: e.target.value
     })
   }
   return (

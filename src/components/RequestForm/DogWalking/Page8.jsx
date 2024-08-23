@@ -4,7 +4,7 @@ const Page8 = ({formData, setFormData}) => {
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      "Where do you need the service?": e.target.value
+      location: e.target.value
     })
   }
   return (

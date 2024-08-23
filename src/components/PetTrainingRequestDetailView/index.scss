@@ -1,0 +1,57 @@
+@import '../utilities/variables';
+
+// <div className='request-detail-view-parent'>
+//         <h1 className='service-name'>{data.service}</h1>
+//         <div className="content">
+//         {data && data.data && data.data.map((item,idx)=>{
+//             return (
+//                 <div className='part' key={idx}>
+//                     <h4 className="question">
+//                         {item.question}
+//                     </h4>
+//                     <div className='answer'>
+//                     {Array.isArray(item.answer) ? (
+//                     <ul>
+//                       {item.answer.map((sub_item,idx) => (
+//                         <li key={idx}>{sub_item}</li>
+//                       ))}
+//                     </ul>
+//                   ) : (
+//                     <p>{item.answer}</p>
+//                   )}
+//                     </div>
+//                 </div>
+//             )
+//         })}
+//         </div>
+
+//     </div>
+
+.request-detail-view-parent {
+    padding: 20px;
+    .service-name {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: $primary;
+    }
+    .content {
+        
+        .part {
+            margin-bottom: 20px;
+            .question {
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+            .answer {
+                ul {
+                    padding-left: 20px;
+                    li {
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -4,7 +4,7 @@ const Page9 = ({formData, setFormData}) => {
     const handleChange = (e) => {
         setFormData({
             ...formData,
-            "Do you need pet pickup services?": e.target.value
+            pickup_required: e.target.value === 'yes' ? true : false
         })
     }
   return (

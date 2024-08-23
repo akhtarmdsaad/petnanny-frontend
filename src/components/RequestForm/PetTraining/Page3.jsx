@@ -4,7 +4,7 @@ const Page3 = ({formData, setFormData}) => {
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      "What breed is it?": e.target.value
+      pet_breed: e.target.value
     })
   }
   return (

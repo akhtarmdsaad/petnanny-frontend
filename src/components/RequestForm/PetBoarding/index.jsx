@@ -10,12 +10,34 @@ import Page8 from './Page8';
 import Page9 from './Page9';
 import Title from '../../commons/Title';
 import './index.scss';
-import Summary from '../Summary';
+import Summary from './Summary';
+
+// class PetBoardingRequest(models.Model):
+//     service = models.CharField(max_length=50, default='Pet Boarding')
+//     num_pets = models.PositiveIntegerField()
+//     pet_type = models.TextField()
+//     pet_breed = models.CharField(max_length=50, blank=True, null=True)
+//     pet_size = models.TextField()
+//     additional_notes = models.TextField(blank=True, null=True)
+//     start_date = models.DateTimeField()
+//     num_nights = models.PositiveIntegerField()
+//     location = models.CharField(max_length=100)
+//     pickup_required = models.BooleanField(default=False)
+
+
 
 const Index = () => {
     const [index,setIndex] = useState(0);
     const [formData,setFormData] = useState({
-      Service: 'Pet Boarding',
+        num_pets: 1,
+        pet_type: '',
+        pet_breed: '',
+        pet_size: '',
+        additional_notes: '',
+        start_date: new Date(),
+        num_nights: 1,
+        location: '',
+        pickup_required: false
     });
     const forms = [
       <Page1 formData={formData} setFormData={setFormData} />, <Page2 formData={formData} setFormData={setFormData} />, 

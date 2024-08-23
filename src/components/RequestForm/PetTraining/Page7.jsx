@@ -4,7 +4,7 @@ const Page7 = ({formData, setFormData}) => {
     const handleRadioChange = (e) => {
         setFormData({
         ...formData,
-        "Are you looking for private lessons, group training or board and train programs?": e.target.value
+        training_type: e.target.value
         })
     }
   return (

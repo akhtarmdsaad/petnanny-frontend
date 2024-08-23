@@ -4,7 +4,7 @@ const Page7 = ({formData, setFormData}) => {
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      "Number of days required?": e.target.value
+      num_days: parseInt(e.target.value)
     })
   }
   return (

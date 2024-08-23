@@ -6,7 +6,7 @@ import axios from '../../../interceptors/axios';
 // let location, duration, service, item_id, status;
 let service;
 
-const Request = ({key,request}) => {
+const Request = ({key,request, url}) => {
   const [serviceName, setServiceName] = useState(service);
   let item_id;
 
@@ -26,32 +26,15 @@ const Request = ({key,request}) => {
     console.log(request)
     let service;
     // get service name from request
-      /*Object { id: 10, , data: (9) […], created_at: "2024-08-14T16:00:26.608719Z", updated_at: "2024-08-14T16:00:26.608789Z", user: 5 }
-  ​
-  created_at: "2024-08-14T16:00:26.608719Z"
-  ​
-  data: Array(9) [ {…}, {…}, {…}, … ]
-  // 0: Object { question: "Service", answer: "Dog Walking" }
-  ​
-  id: 10
-  ​
-  
-  ​
-  updated_at: "2024-08-14T16:00:26.608789Z"
-  ​
-  user: 5
-  ​
-  <prototype>: Object { … }
-  index.jsx:44
-*/
+    setServiceName(request.service)
 
-    request.data.map((item)=>{
-      if (item.question === "Service"){
-        service = item.answer;
-        setServiceName(service);
-      }
-    }
-    )
+    // request.data.map((item)=>{
+    //   if (item.question === "Service"){
+    //     service = item.answer;
+    //     setServiceName(service);
+    //   }
+    // }
+    // )
 
   },[request])
 
@@ -79,7 +62,7 @@ const Request = ({key,request}) => {
             </div>
         </div>
         <div className="right_arrow" onClick={
-          ()=>{window.location.href = `/requests/${item_id}`}
+          ()=>{window.location.href = `requests/${url}/${request.id}`}
           }>
                 <img src="/assets/images/right_arrow.png" alt="right_arrow" />
         </div>

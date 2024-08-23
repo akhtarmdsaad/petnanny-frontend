@@ -11,12 +11,35 @@ import Page5 from './Page5';
 import Page6 from './Page6';
 import Page7 from './Page7';
 import Page8 from './Page8';
-import Summary from '../Summary';
+import Summary from './Summary';
+
+// class DogWalkingRequest(models.Model):
+//     service = models.CharField(max_length=50, default='Dog Walking')
+//     num_dogs = models.PositiveIntegerField()
+//     dog_breed = models.CharField(max_length=50)
+//     dog_size = models.TextField()
+//     additional_notes = models.TextField(blank=True, null=True)
+//     walks_per_day = models.PositiveIntegerField()
+//     num_days = models.PositiveIntegerField()
+//     start_date = models.DateTimeField(auto_now=True)
+//     location = models.CharField(max_length=100)
+//     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, null=True)
+//     created_at = models.DateTimeField(auto_now_add=True,null=True)
+//     updated_at = models.DateTimeField(auto_now=True,null=True)
+
 
 const Index = () => {
     const [index,setIndex] = useState(0);
     const [formData,setFormData] = useState({
-      Service: 'Dog Walking',
+        service: 'Dog Walking',
+        num_dogs: 0,
+        dog_breed: '',
+        dog_size: '',
+        additional_notes: '',
+        walks_per_day: 0,
+        num_days: 0,
+        start_date: '',
+        location: ''
     });
     const forms = [<Page1 formData={formData} setFormData={setFormData} />, <Page2 formData={formData} setFormData={setFormData} />, 
     <Page3 formData={formData} setFormData={setFormData} />, <Page4 formData={formData} setFormData={setFormData} />, 

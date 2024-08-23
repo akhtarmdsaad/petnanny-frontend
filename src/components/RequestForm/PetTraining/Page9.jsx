@@ -13,7 +13,9 @@ const Page9 = ({formData, setFormData}) => {
     } else {
       petType.push(value);
     }
-    setFormData({...formData, "Pick the sessions you are available for":petType});
+    setFormData({...formData, 
+      available_sessions: petType.join(", ")
+    });
   }
   return (
     <div className='form'>
